@@ -2,7 +2,7 @@
 // Configurações de conexão
 $usuario = 'admin_inventario';
 $senha   = 'webserver';
-$dbname  = 'dbtutorial';
+$dbname  = 'inventario';
 $host    = '192.168.121.33';
 $port    = "3306";
 
@@ -29,4 +29,5 @@ try {
     $logFile = __DIR__ . "/pdo_errors.log";
     $mensagem = "[" . date("Y-m-d H:i:s") . "] " . $e->getMessage() . PHP_EOL;
     file_put_contents($logFile, $mensagem, FILE_APPEND);
+
 }
