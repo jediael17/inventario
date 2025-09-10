@@ -2,7 +2,6 @@
 require("connector.php");
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Captura dos campos do formulário
     $chamado           = $_POST['chamado'] ?? null;
     $patrimonio        = $_POST['patrimonio'] ?? null;
     $rq                = $_POST['rq'] ?? null;
@@ -13,10 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $tipoChamado       = $_POST['tipo_chamado'] ?? null;
     $status            = $_POST['status'] ?? null;
 
-    // Validação simples
     if ($chamado && $patrimonio && $rq && $modelo && $nomeColaborador && $cr && $data && $tipoChamado && $status) {
         try {
-            // Query preparada
             $query = "INSERT INTO chamados 
                 (chamado, patrimonio, rq, modelo_equipamento, nome_colaborador, cr, data, tipo_chamado, status) 
                 VALUES 
@@ -24,7 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             $stmt = $pdo->prepare($query);
 
-            // Executa com os valores
             $stmt->execute([
                 ':chamado'         => $chamado,
                 ':patrimonio'      => $patrimonio,
@@ -37,7 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 ':status'          => $status
             ]);
 
-            // Redireciona com sucesso
             header("Location: index.php?criado=sucesso");
             exit;
 
