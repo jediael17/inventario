@@ -1,0 +1,109 @@
+.cabecalho{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.cabecalho img{
+    max-height: 35px;
+}
+
+.mode{
+    gap: .7rem;
+    padding: .5rem;
+    border-radius: .5rem;
+    height: auto;
+    cursor: pointer;
+    transition: 300ms ease-in-out;
+}
+
+.google-search {
+    position: relative;
+    width: 500px;
+    margin: 0 auto;
+  }
+  
+  .google-search input {
+    width: 100%;
+    padding: 12px 45px 12px 20px;
+    border-radius: 25px;
+    border: 1px solid #dadce0;
+    font-size: 14px;
+    outline: none;
+    background: var(--btn-bgNav);
+    box-shadow: 0 1px 6px var(--bg-shadow);
+    transition: box-shadow 0.2s ease-in-out, border-color 0.2s;
+  }
+  
+  .google-search input:focus {
+    border-color: var(--bg-bd-input);
+    box-shadow: 0 1px 8px rgba(66, 133, 244, 0.4);
+  }
+  
+  .google-search .material-symbols-outlined {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #5f6368;
+    cursor: pointer;
+    font-size: 22px;
+  }
+  
+  .search-history {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    background: var(--btn-bgNav);
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    list-style: none;
+    padding: 6px 0;
+    margin: 8px 0 0 0;
+    display: none;
+    z-index: 1000;
+  }
+  
+  .search-history .history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.15s;
+    border-radius: 8px;
+  }
+  
+  .search-history .history-item:hover {
+    background: var(--bg-color-search);
+  }
+  
+  /* texto clicável */
+  .search-history .history-text {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  /* botão remover (X) — escondido por padrão e aparece no hover do item */
+  .search-history .remove-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    color: #888;
+    cursor: pointer;
+    padding: 4px;
+    margin-left: 12px;
+  }
+  .search-history .history-item:hover .remove-btn {
+    display: inline-block;
+  }
+  .search-history .remove-btn:hover {
+    color: #d93025; /* vermelho like Google */
+  }
